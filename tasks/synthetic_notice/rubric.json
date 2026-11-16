@@ -1,0 +1,90 @@
+{
+  "version": "public-synthetic-1",
+  "items": [
+    {
+      "id": "arabic",
+      "category": "language",
+      "weight": 1,
+      "desc": "Arabic response",
+      "gate_multiplier": 0.5,
+      "check": {
+        "type": "arabic_ratio",
+        "min": 0.8
+      }
+    },
+    {
+      "id": "recipient",
+      "category": "content",
+      "weight": 1,
+      "desc": "Address fictional recipient",
+      "check": {
+        "type": "regex_any",
+        "patterns": [
+          "المؤسسة باء"
+        ]
+      }
+    },
+    {
+      "id": "file_id",
+      "category": "content",
+      "weight": 1,
+      "desc": "Identify the demo file",
+      "check": {
+        "type": "regex_any",
+        "patterns": [
+          "demo-17"
+        ]
+      }
+    },
+    {
+      "id": "return",
+      "category": "content",
+      "weight": 1,
+      "desc": "Request return of file",
+      "check": {
+        "type": "regex_any",
+        "patterns": [
+          "إعادة ملف",
+          "إرجاع ملف"
+        ]
+      }
+    },
+    {
+      "id": "placeholder",
+      "category": "constraint",
+      "weight": 1,
+      "desc": "Leave deadline in brackets",
+      "check": {
+        "type": "regex_any",
+        "patterns": [
+          "\\[[^\\]\\n]+\\]"
+        ]
+      }
+    },
+    {
+      "id": "receipt",
+      "category": "content",
+      "weight": 1,
+      "desc": "Ask for receipt confirmation",
+      "check": {
+        "type": "regex_any",
+        "patterns": [
+          "تأكيد الاستلام"
+        ]
+      }
+    },
+    {
+      "id": "naive_compensation_trap",
+      "category": "demonstration_of_known_bug",
+      "weight": 2,
+      "gate_multiplier": 0.5,
+      "desc": "Intentionally naive: fails on compensation wording even when negated",
+      "check": {
+        "type": "trap",
+        "bad": [
+          "تعويض مالي"
+        ]
+      }
+    }
+  ]
+}

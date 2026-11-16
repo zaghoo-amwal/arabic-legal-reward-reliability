@@ -1,0 +1,16 @@
+{
+  "task_id": "synthetic_notice",
+  "title_en": "Synthetic document-return reminder",
+  "task_type": "synthetic_instruction_following",
+  "jurisdiction": "fictional; no legal conclusions",
+  "prompt": "تمرين اصطناعي لا يمثل معاملة حقيقية أو رأيا قانونيا. اكتب تذكيرا عربيا وديا من المؤسسة ألف إلى المؤسسة باء لإعادة ملف العرض التجريبي DEMO-17. اترك الموعد بين أقواس. اذكر أن التذكير لا يطالب بتعويض مالي. اختم بطلب تأكيد الاستلام. لا تضف معلومات عن قانون أو محكمة.",
+  "prompt_provenance": {
+    "method": "new AI-assisted synthetic example for public release",
+    "status": "synthetic"
+  },
+  "reference": {
+    "path": "reference.md",
+    "kind": "synthetic_example",
+    "source": "new AI-assisted text; no original reference document copied"
+  }
+}

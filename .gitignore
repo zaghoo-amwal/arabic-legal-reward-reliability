@@ -1,0 +1,17 @@
+# Private credentials and generated artifacts
+.env
+.env.*
+!.env.example
+*api_key*
+*.pem
+*.key
+*.log
+*.jsonl
+runs/
+results/
+.local_archive/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store

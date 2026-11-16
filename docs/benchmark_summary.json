@@ -1,0 +1,47 @@
+{
+  "status": "historical exploratory results; known evaluator defects retained",
+  "scale": "raw reward in [0,1]; README displays reward times 100, not accuracy",
+  "samples_per_model_per_task": 1,
+  "astra": "requested gpt-6-astra; Codex harness; high reasoning",
+  "claude": "requested claude-opus-5-5; provider adapter",
+  "judge": "project Claude Opus 5.5 judge; not independent expert adjudication",
+  "public_reproducibility": "original tasks and transcripts withheld; public synthetic demo is separate",
+  "tasks": [
+    {
+      "task_id": "consulting_contract_review",
+      "astra_raw_reward": 0.725,
+      "claude_raw_reward": 0.75,
+      "interpretation_note": "Development-set rubric"
+    },
+    {
+      "task_id": "maintenance_contract_review",
+      "astra_raw_reward": 0.7738,
+      "claude_raw_reward": 0.8571,
+      "interpretation_note": "Development-set rubric"
+    },
+    {
+      "task_id": "partner_exit_meeting_prep",
+      "astra_raw_reward": 0.73,
+      "claude_raw_reward": 0.8333,
+      "interpretation_note": "Semantic structure checks miss paraphrases"
+    },
+    {
+      "task_id": "payment_demand_letter",
+      "astra_raw_reward": 0.4596,
+      "claude_raw_reward": 0.8485,
+      "interpretation_note": "Astra negation falsely triggers a penalty"
+    },
+    {
+      "task_id": "probation_termination_memo",
+      "astra_raw_reward": 0.4394,
+      "claude_raw_reward": 0.3788,
+      "interpretation_note": "Astra contractual example falsely triggers a penalty"
+    },
+    {
+      "task_id": "mutual_nda_drafting",
+      "astra_raw_reward": 0.2947,
+      "claude_raw_reward": 0.7636,
+      "interpretation_note": "False IP-transfer penalty; jurisdiction missing from prompt"
+    }
+  ]
+}
