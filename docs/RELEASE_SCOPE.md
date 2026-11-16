@@ -2,7 +2,7 @@
 
 Included: evaluator source code; a newly authored AI-assisted synthetic prompt, reference and rubric; offline tests; the verifier-validation experiment (67 newly written matched sentences, the six trap definitions before and after the fix, a measurement script and a chart); summarized historical research findings, a machine-readable score summary, a research cover page with public literature links and a short author background, technical methods, and a publication checker.
 
-Excluded: all six original task packages and references, original negative-control fixtures and citation ledger, screenshot/document provenance, raw model answers, judge caches, snapshots, Codex event traces, session metadata, local logs, and application/resume working notes.
+Excluded: all six original task packages and references (apart from the six trap definitions published with the verifier-validation experiment), original negative-control fixtures and citation ledger, screenshot/document provenance, raw model answers, judge caches, snapshots, Codex event traces, session metadata, local logs, and application/resume working notes.
 
 The original working directory is retained locally. This standalone folder is the publication source; do not upload its parent directory. The source workspace had no Git history to scrub. Publication starts from a new repository containing only the reviewed release files.
 
