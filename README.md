@@ -10,7 +10,7 @@
 
 | Original exploratory study | Public, runnable release | Current research stage |
 |---|---|---|
-| 6 Arabic legal tasks · 109 weighted criteria | 1 new synthetic task · 7 criteria | Evaluator development; no RL training |
+| 6 Arabic legal tasks · 109 weighted criteria | 1 synthetic task · 67 frozen matched sentences | Trap checks validated on held-out sentences; no RL training |
 
 ## Why high-quality data matters in MENA
 
@@ -47,7 +47,25 @@ Astra used Codex at high reasoning; Claude used the project's provider adapter. 
 
 The numbers are retained as observations about an experimental evaluator. No aggregate winner is reported. [Machine-readable summary](docs/benchmark_summary.json) · [Research note](docs/RESEARCH_NOTE.md)
 
-## The most useful finding: scoring errors can look like model failures
+## Main result: measured and reduced trap errors
+
+On 67 matched Arabic sentences, frozen before any change and split into dev and held-out halves, the original trap checker wrongly penalised **46% of compliant sentences** and missed **33% of violations**. Making negation clause-scoped brought the held-out split to **0/17 false penalties and 1/13 misses**. The held-out half was scored once, after the fix was frozen.
+
+![Trap checker errors before and after](experiments/verifier_validation/trap_errors.svg)
+
+On the private six-task corpus, the fix changed exactly three gate decisions, all known false positives. It let no reference, negative control or real violation through:
+
+| GPT-6 Astra answer | Raw reward, historical checker | After the fix |
+|---|---:|---:|
+| Payment demand letter | 0.46 | 0.72 |
+| Probation termination memo | 0.44 | 1.00 |
+| Mutual NDA drafting | 0.29 | 0.66 |
+
+The probation comparison reverses. Astra's memo is correct on the 1446H amendment (Royal Decree M/44), while Claude Opus 5.5's memo still triggers the trap (0.38) because it states the repealed 90-day rule as current law. The old checker had turned a correct answer into an apparent model failure.
+
+The labels were written by an AI assistant, not independent legal reviewers, and the sample is small: 0/17 has a 95% upper bound of about 16%. [Method, per-phenomenon errors and limitations](experiments/verifier_validation/README.md).
+
+## Why it mattered: scoring errors can look like model failures
 
 Three cases illustrate why data and verifier quality belong in the same research program:
 
@@ -55,7 +73,7 @@ Three cases illustrate why data and verifier quality belong in the same research
 2. **Context changes the rule being discussed.** The probation checker treated discussion of a contractual 90-day period as a claim about the statutory maximum, despite the response also stating a 180-day ceiling.
 3. **The rubric can ask for information the prompt never supplied.** The NDA grader expected Saudi-specific grounding, but jurisdiction metadata was not included in the generation prompt. That calls for a new prompt version and new model runs.
 
-The public demo reproduces the first mechanism with newly written text: a reminder saying it **does not** demand compensation receives the same score as one saying it does. It is deliberately small enough to inspect end to end.
+The public demo reproduces the first mechanism with newly written text: a reminder saying it **does not** demand compensation receives the same score as one saying it does. It is deliberately small enough to inspect end to end. The demo rubric keeps the naive trap so the defect stays visible; a test shows that the same trap with `clause_negation` passes the negated reminder and still penalises the asserted one. Mechanisms 1 and 2 are addressed by the validation above. Mechanism 3 needs a new prompt version and is still open.
 
 ## How the evaluator works
 
@@ -82,11 +100,12 @@ Python 3.10+; no API key or external dependency needed:
 
 ```bash
 python3 -m unittest discover tests
+python3 -m experiments.verifier_validation.measure
 python3 -m legal_rlvr.evaluate
 python3 tools/check_release.py
 ```
 
-The synthetic example earns **0.375**: a 0.75 base score multiplied by a 0.5 gate. Its six tests verify the demo, including reproduction of the known defect. Passing them does not establish semantic correctness. Evaluation writes and replaces `results/report.md` and `results/scores.json`.
+The synthetic example earns **0.375**: a 0.75 base score multiplied by a 0.5 gate. Eight tests cover the demo (including reproduction of the known defect and its fix) and reproduce the verifier-validation numbers. Passing them does not establish semantic correctness. Evaluation writes and replaces `results/report.md` and `results/scores.json`.
 
 ```python
 from legal_rlvr import LegalDraftingEnv
@@ -100,7 +119,8 @@ The original six task packages, source-derived references, raw model outputs, an
 
 ## Next experiments
 
-- **Validate the verifier:** independently label matched Arabic examples that vary negation, contractual versus statutory framing, and paraphrase. Measure criterion precision/recall and false gate activation.
+- **Finish validating the verifier:** the trap checks now have a frozen matched-pair test (above). Next: have a qualified Saudi lawyer review its labels and write a new held-out set from a different author, then extend the same test to positive criteria, which still miss Arabic paraphrases.
+- **Fix the hidden NDA requirement:** version the prompt with explicit jurisdiction and regenerate, rather than re-scoring old answers against a requirement they were never given.
 - **Separate development from evaluation:** freeze prompts and rubrics before testing held-out task variants; record changes and keep historical results intact.
 - **Improve model comparisons:** match prompts and tool access, collect multiple samples, and report uncertainty alongside independent human assessment.
 - **Extend to financial workflows:** build synthetic reconciliation and refund tasks whose outcomes can be checked against ledgers and state transitions. Test adversarial shortcuts before using their rewards for optimization.

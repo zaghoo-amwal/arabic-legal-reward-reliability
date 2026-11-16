@@ -23,13 +23,21 @@ The table is transcribed from the saved full-score JSON artifacts. It records ra
 
 Other observed misses include Arabic paraphrases for prior possession and proof, bracketed duration placeholders, and semantic section separation. These examples motivate measuring verifier errors against independent annotations.
 
+## Follow-up: trap verifier validation (2026-11-16)
+
+The first two failure modes were measured and addressed in [`experiments/verifier_validation`](../experiments/verifier_validation/README.md). The test set is 67 matched Arabic sentences for six traps, frozen (SHA-256 recorded) before any change and split 37 dev / 30 held-out. The historical checker wrongly penalised 17/37 compliant sentences and missed 10/30 violations. Clause-scoped negation, designed on dev errors only, scored 0/17 false penalties and 1/13 misses on the held-out split, measured once.
+
+Re-scoring the private corpus with the fixed checker changed three raw rewards, all known false positives: Astra payment 0.4596 → 0.7172, probation 0.4394 → 1.0, NDA 0.2947 → 0.6621. No reference, negative-control or Claude decision changed. The historical table above is kept as recorded; these are corrected-grader reruns of the same saved answers, not new generations. The third failure mode (hidden jurisdiction requirement) is still open.
+
+Caveats: an AI assistant wrote and labelled all the sentences, both splits come from that one author, and the held-out sample is small. These results establish that the checker change generalises within this set, not that it is legally validated.
+
 ## What the evidence does and does not support
 
 The tests exercise normalization, reference/control separation and selected traps. Eleven tests passed in the original local environment before release preparation; those private-corpus tests are not included here. This is implementation evidence, not a precision/recall estimate or independent legal validation.
 
 The source references have unequal completeness, and some legal claims are provisional. Rubrics were adapted after seeing candidate answers, so results are development-set measurements. Different generation harnesses, one sample per task, a Claude judge, and known false positives prevent a reliable model ranking. Differences between two judges alone do not establish self-preference causally.
 
-Earlier manual adjustments to two Astra trap results were sensitivity analyses, not corrected-grader reruns. They must not replace raw scores or be described as validated performance gains.
+Earlier manual adjustments to two Astra trap results were sensitivity analyses, not corrected-grader reruns. The follow-up above replaces them with actual reruns under a frozen, tested checker; the historical raw scores are still reported unchanged.
 
 ## Next experiment (proposed, not completed)
 

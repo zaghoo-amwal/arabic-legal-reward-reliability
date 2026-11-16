@@ -29,19 +29,26 @@
       "task_id": "payment_demand_letter",
       "astra_raw_reward": 0.4596,
       "claude_raw_reward": 0.8485,
-      "interpretation_note": "Astra negation falsely triggers a penalty"
+      "interpretation_note": "Astra negation falsely triggers a penalty",
+      "astra_raw_reward_after_trap_fix_v2": 0.7172,
+      "claude_raw_reward_after_trap_fix_v2": 0.8485
     },
     {
       "task_id": "probation_termination_memo",
       "astra_raw_reward": 0.4394,
       "claude_raw_reward": 0.3788,
-      "interpretation_note": "Astra contractual example falsely triggers a penalty"
+      "interpretation_note": "Astra contractual example falsely triggers a penalty",
+      "astra_raw_reward_after_trap_fix_v2": 1.0,
+      "claude_raw_reward_after_trap_fix_v2": 0.3788
     },
     {
       "task_id": "mutual_nda_drafting",
       "astra_raw_reward": 0.2947,
       "claude_raw_reward": 0.7636,
-      "interpretation_note": "False IP-transfer penalty; jurisdiction missing from prompt"
+      "interpretation_note": "False IP-transfer penalty; jurisdiction missing from prompt",
+      "astra_raw_reward_after_trap_fix_v2": 0.6621,
+      "claude_raw_reward_after_trap_fix_v2": 0.7636
     }
-  ]
+  ],
+  "trap_fix_v2": "2026-11-16 rerun of the same saved answers with the clause-scoped negation checker; see experiments/verifier_validation. Historical raw values unchanged."
 }

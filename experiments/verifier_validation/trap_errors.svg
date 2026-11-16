@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<rect width="760" height="380" fill="#fcfcfb"/>
+<text x="24" y="34" font-size="17" font-weight="600" fill="#0b0b0b">Trap checker errors on 67 matched Arabic sentences</text>
+<text x="24" y="56" font-size="13" fill="#52514e">Lower is better. Held-out split measured once, after the fix was frozen.</text>
+<rect x="24" y="72" width="12" height="12" rx="2" fill="#eb6834"/><text x="42" y="82" font-size="12.5" fill="#52514e">v1: keyword window</text>
+<rect x="224" y="72" width="12" height="12" rx="2" fill="#2a78d6"/><text x="242" y="82" font-size="12.5" fill="#52514e">v2: clause-scoped negation</text>
+<text x="24" y="110" font-size="13.5" font-weight="600" fill="#0b0b0b">Compliant text wrongly penalised</text>
+<line x1="24" x2="364" y1="320.0" y2="320.0" stroke="#e1e0d9" stroke-width="1"/><text x="364" y="316.0" font-size="11" fill="#898781" text-anchor="end">0%</text>
+<line x1="24" x2="364" y1="235.83333333333331" y2="235.83333333333331" stroke="#e1e0d9" stroke-width="1"/><text x="364" y="231.83333333333331" font-size="11" fill="#898781" text-anchor="end">25%</text>
+<line x1="24" x2="364" y1="151.66666666666666" y2="151.66666666666666" stroke="#e1e0d9" stroke-width="1"/><text x="364" y="147.66666666666666" font-size="11" fill="#898781" text-anchor="end">50%</text>
+<path d="M54,320 V155.66666666666666 Q54,151.66666666666666 58,151.66666666666666 H96 Q100,151.66666666666666 100,155.66666666666666 V320 Z" fill="#eb6834"><title>v1 Dev: 10/20 (50%)</title></path>
+<text x="77.0" y="145.66666666666666" font-size="12" fill="#0b0b0b" text-anchor="middle">10/20</text>
+<text x="125.0" y="314.0" font-size="12" fill="#0b0b0b" text-anchor="middle">0/20</text>
+<text x="101" y="338" font-size="12.5" fill="#52514e" text-anchor="middle">Dev</text>
+<path d="M214,320 V185.37254901960785 Q214,181.37254901960785 218,181.37254901960785 H256 Q260,181.37254901960785 260,185.37254901960785 V320 Z" fill="#eb6834"><title>v1 Held-out: 7/17 (41%)</title></path>
+<text x="237.0" y="175.37254901960785" font-size="12" fill="#0b0b0b" text-anchor="middle">7/17</text>
+<text x="285.0" y="314.0" font-size="12" fill="#0b0b0b" text-anchor="middle">0/17</text>
+<text x="261" y="338" font-size="12.5" fill="#52514e" text-anchor="middle">Held-out</text>
+<line x1="24" x2="364" y1="320" y2="320" stroke="#898781" stroke-width="1"/>
+<text x="394" y="110" font-size="13.5" font-weight="600" fill="#0b0b0b">Real violations missed</text>
+<line x1="394" x2="734" y1="320.0" y2="320.0" stroke="#e1e0d9" stroke-width="1"/><text x="734" y="316.0" font-size="11" fill="#898781" text-anchor="end">0%</text>
+<line x1="394" x2="734" y1="235.83333333333331" y2="235.83333333333331" stroke="#e1e0d9" stroke-width="1"/><text x="734" y="231.83333333333331" font-size="11" fill="#898781" text-anchor="end">25%</text>
+<line x1="394" x2="734" y1="151.66666666666666" y2="151.66666666666666" stroke="#e1e0d9" stroke-width="1"/><text x="734" y="147.66666666666666" font-size="11" fill="#898781" text-anchor="end">50%</text>
+<path d="M424,320 V185.37254901960785 Q424,181.37254901960785 428,181.37254901960785 H466 Q470,181.37254901960785 470,185.37254901960785 V320 Z" fill="#eb6834"><title>v1 Dev: 7/17 (41%)</title></path>
+<text x="447.0" y="175.37254901960785" font-size="12" fill="#0b0b0b" text-anchor="middle">7/17</text>
+<text x="495.0" y="314.0" font-size="12" fill="#0b0b0b" text-anchor="middle">0/17</text>
+<text x="471" y="338" font-size="12.5" fill="#52514e" text-anchor="middle">Dev</text>
+<path d="M584,320 V246.30769230769232 Q584,242.30769230769232 588,242.30769230769232 H626 Q630,242.30769230769232 630,246.30769230769232 V320 Z" fill="#eb6834"><title>v1 Held-out: 3/13 (23%)</title></path>
+<text x="607.0" y="236.30769230769232" font-size="12" fill="#0b0b0b" text-anchor="middle">3/13</text>
+<path d="M632,320 V298.1025641025641 Q632,294.1025641025641 636,294.1025641025641 H674 Q678,294.1025641025641 678,298.1025641025641 V320 Z" fill="#2a78d6"><title>v2 Held-out: 1/13 (8%)</title></path>
+<text x="655.0" y="288.1025641025641" font-size="12" fill="#0b0b0b" text-anchor="middle">1/13</text>
+<text x="631" y="338" font-size="12.5" fill="#52514e" text-anchor="middle">Held-out</text>
+<line x1="394" x2="734" y1="320" y2="320" stroke="#898781" stroke-width="1"/>
+<text x="24" y="366" font-size="11.5" fill="#898781">Labels by the author (Claude), written before the fix; not yet reviewed by a lawyer.</text>
+</svg>

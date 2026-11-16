@@ -8,7 +8,7 @@ Historical prompts were transcribed from source material, including a cropped pr
 
 ## Scoring
 
-Arabic normalization folds selected orthographic variants, digits and written article ordinals. Deterministic checks evaluate pattern matches, coverage, counts, traps, language ratio, citation ranges and an allowlist of case identifiers. A citation-range check only tests a numerical boundary; it does not establish that the provision exists, is current, or supports the answer.
+Arabic normalization folds selected orthographic variants, digits and written article ordinals. Deterministic checks evaluate pattern matches, coverage, counts, traps, language ratio, citation ranges and an allowlist of case identifiers. Traps can excuse a hit through a framing pattern within a character window, through clause-scoped negation (`clause_negation`: a negator governing the hit inside its own clause, excluding deontic «لا يجوز» and affirmative «لا شك»), or through a same-sentence cue (`sentence_unless`, e.g. a contractual term rather than a statutory rule). The negation rule was validated on frozen held-out sentences ([experiment](../experiments/verifier_validation/README.md)). A citation-range check only tests a numerical boundary; it does not establish that the provision exists, is current, or supports the answer.
 
 Judge criteria use normalized scores of 0, 0.5 and 1. The reward is a weighted average of scored criteria multiplied by each failed gate's multiplier. A partially satisfied gate also activates its multiplier. Without the judge, unscored judge items leave the denominator, so full and rules-only scores are not directly comparable.
 

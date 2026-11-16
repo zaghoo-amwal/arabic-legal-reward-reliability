@@ -42,6 +42,23 @@ class PublicDemoTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "Set ANTHROPIC_API_KEY"):
                 make_client()
 
+    def test_clause_scoped_negation_fixes_the_demo(self):
+        # Same synthetic texts, trap run with clause_negation (verifier v2).
+        from legal_rlvr.checks import trap
+        _, rubric, ref = load_task("synthetic_notice")
+        spec = dict(next(i for i in rubric["items"] if i["id"] == "naive_compensation_trap")["check"], clause_negation=True)
+        negated, asserted = ref, ref.replace("لا يطالب", "يطالب")
+        self.assertEqual(trap(spec, normalize(negated), negated)[0], 1.0)
+        self.assertEqual(trap(spec, normalize(asserted), asserted)[0], 0.0)
+
+    def test_verifier_validation_reproduces(self):
+        from experiments.verifier_validation import measure
+        rows, specs, sha = measure.load()
+        self.assertEqual(sha, measure.FROZEN_SHA256)
+        heldout = lambda v: measure.metrics(measure.score(rows, specs, v))["heldout"]
+        self.assertEqual((heldout("v1")["false_penalty"], heldout("v1")["miss"]), ("7/17", "3/13"))
+        self.assertEqual((heldout("v2")["false_penalty"], heldout("v2")["miss"]), ("0/17", "1/13"))
+
 
 if __name__ == "__main__":
     unittest.main()

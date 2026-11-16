@@ -1,0 +1,247 @@
+{
+ "pairs_sha256": "cbd93ce871c86c034241647073e7a8f67f158e32e10bd77c349bcc337f0235b2",
+ "v1": {
+  "metrics": {
+   "dev": {
+    "n": 37,
+    "false_penalty": "10/20",
+    "miss": "7/17",
+    "accuracy": 0.541
+   },
+   "heldout": {
+    "n": 30,
+    "false_penalty": "7/17",
+    "miss": "3/13",
+    "accuracy": 0.667
+   },
+   "all": {
+    "n": 67,
+    "false_penalty": "17/37",
+    "miss": "10/30",
+    "accuracy": 0.597
+   }
+  },
+  "errors": [
+   {
+    "id": "trap_added_charges-03",
+    "split": "dev",
+    "label": "violation",
+    "phenomenon": "paraphrase",
+    "text": "وتتحملون أتعاب المحامي وتكاليف التقاضي كاملة."
+   },
+   {
+    "id": "trap_added_charges-08",
+    "split": "heldout",
+    "label": "compliant",
+    "phenomenon": "negated",
+    "text": "ولا تقدم المسودة أي مطالبة بالتعويض أو رسوم محاماة."
+   },
+   {
+    "id": "trap_added_charges-10",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "quoted_instruction",
+    "text": "التزمنا بطلبكم: لا فوائد ولا تعويض ولا رسوم محاماة."
+   },
+   {
+    "id": "trap_added_charges-13",
+    "split": "heldout",
+    "label": "compliant",
+    "phenomenon": "negated_lexical",
+    "text": "الرسالة خالية من أي فوائد تأخير أو رسوم محاماة."
+   },
+   {
+    "id": "trap_added_charges-14",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "negated_lexical",
+    "text": "نمتنع في هذه المرحلة عن المطالبة بالتعويض."
+   },
+   {
+    "id": "trap_called_formal_notice-17",
+    "split": "dev",
+    "label": "violation",
+    "phenomenon": "negation_other_clause",
+    "text": "ليس لدينا رغبة في النزاع، وهذه الرسالة إنذار نظامي بالسداد."
+   },
+   {
+    "id": "trap_called_formal_notice-18",
+    "split": "heldout",
+    "label": "violation",
+    "phenomenon": "plain",
+    "text": "نوجه إليكم هذا الإعذار الرسمي بالسداد."
+   },
+   {
+    "id": "trap_called_formal_notice-19",
+    "split": "dev",
+    "label": "violation",
+    "phenomenon": "paraphrase",
+    "text": "تعتبر هذه الرسالة بمثابة إخطار قانوني نهائي."
+   },
+   {
+    "id": "trap_called_formal_notice-20",
+    "split": "heldout",
+    "label": "compliant",
+    "phenomenon": "negated",
+    "text": "المسودة مطالبة مهنية بالمبلغ المتبقي فقط، ولا تقدم بوصفها إنذارًا نظاميًا مكتملًا."
+   },
+   {
+    "id": "trap_called_formal_notice-24",
+    "split": "heldout",
+    "label": "compliant",
+    "phenomenon": "negated_lexical",
+    "text": "تجنبنا وصف الرسالة بأنها إنذار نهائي."
+   },
+   {
+    "id": "trap_outdated_90_day_rule-28",
+    "split": "dev",
+    "label": "violation",
+    "phenomenon": "paraphrase",
+    "text": "فترة التجربة ثلاثة أشهر كحد أقصى، قابلة للتمديد بموافقة الطرفين الكتابية."
+   },
+   {
+    "id": "trap_outdated_90_day_rule-31",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "contractual",
+    "text": "مثال عملي: إذا نص العقد على تجربة مدتها 90 يومًا، واستمر العامل بعدها دون تمديد صحيح متفق عليه قبل انتهائها، فلا يكفي الاستناد إلى التجربة لإنهاء العقد."
+   },
+   {
+    "id": "trap_outdated_90_day_rule-34",
+    "split": "heldout",
+    "label": "compliant",
+    "phenomenon": "contractual",
+    "text": "نص العقد على تجربة مدتها 90 يومًا دون تمديد، والحد النظامي الحالي 180 يومًا."
+   },
+   {
+    "id": "trap_outdated_90_day_rule-35",
+    "split": "heldout",
+    "label": "compliant",
+    "phenomenon": "superseded_lexical",
+    "text": "لم يعد الحد 90 يومًا قابلة للتمديد، بل أصبح 180 يومًا."
+   },
+   {
+    "id": "trap_outdated_90_day_rule-36",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "superseded_lexical",
+    "text": "النص القديم (90 يومًا قابلة للتمديد إلى 180) لم يعد ساريًا."
+   },
+   {
+    "id": "trap_outdated_90_day_rule-37",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "quoted_question",
+    "text": "سألتم: هل ما زالت التجربة 90 يومًا قابلة للتمديد؟ الجواب: لا، الحد الآن 180 يومًا."
+   },
+   {
+    "id": "trap_non_compete_or_ip_transfer-39",
+    "split": "dev",
+    "label": "violation",
+    "phenomenon": "plain",
+    "text": "تؤول إلى الطرف المفصح ملكية أي تحسينات يجريها الطرف المتلقي."
+   },
+   {
+    "id": "trap_non_compete_or_ip_transfer-41",
+    "split": "heldout",
+    "label": "violation",
+    "phenomenon": "paraphrase",
+    "text": "لا يجوز للطرف المتلقي ممارسة أي نشاط مماثل لنشاط الطرف المفصح لمدة سنة."
+   },
+   {
+    "id": "trap_non_compete_or_ip_transfer-42",
+    "split": "dev",
+    "label": "violation",
+    "phenomenon": "prohibition_negation",
+    "text": "لا يجوز للطرف المتلقي منافسة الطرف المفصح في السوق لمدة سنتين."
+   },
+   {
+    "id": "trap_non_compete_or_ip_transfer-46",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "negated",
+    "text": "لا يترتب على الإفصاح نقل أي حقوق ملكية فكرية إلى الطرف المتلقي."
+   },
+   {
+    "id": "trap_non_compete_or_ip_transfer-47",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "negated",
+    "text": "لا تنتقل بموجب هذه الاتفاقية أي ملكية فكرية، وتبقى المعلومات ملكًا للطرف المفصح."
+   },
+   {
+    "id": "trap_non_compete_or_ip_transfer-49",
+    "split": "heldout",
+    "label": "compliant",
+    "phenomenon": "negated",
+    "text": "يجب ألا يفسر أي نص في هذه الاتفاقية على أنه نقل لملكية فكرية."
+   },
+   {
+    "id": "trap_board_of_grievances-54",
+    "split": "heldout",
+    "label": "violation",
+    "phenomenon": "excuse_word_misfire",
+    "text": "كان من الأفضل اختيار ديوان المظالم للفصل في هذه النزاعات."
+   },
+   {
+    "id": "trap_board_of_grievances-57",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "negated",
+    "text": "لا يختص ديوان المظالم بهذا النزاع، بل المحكمة التجارية."
+   },
+   {
+    "id": "trap_board_of_grievances-58",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "correct_law",
+    "text": "ديوان المظالم يختص بالمنازعات الإدارية مع الجهات الحكومية، وليس بالنزاعات بين شركتين."
+   },
+   {
+    "id": "trap_vat_rate_5-62",
+    "split": "dev",
+    "label": "violation",
+    "phenomenon": "excuse_word_misfire",
+    "text": "الضريبة 5% كما كانت دائمًا."
+   },
+   {
+    "id": "trap_vat_rate_5-65",
+    "split": "dev",
+    "label": "compliant",
+    "phenomenon": "superseded_lexical",
+    "text": "نسبة الضريبة البالغة 5% لم تعد سارية."
+   }
+  ]
+ },
+ "v2": {
+  "metrics": {
+   "dev": {
+    "n": 37,
+    "false_penalty": "0/20",
+    "miss": "0/17",
+    "accuracy": 1.0
+   },
+   "heldout": {
+    "n": 30,
+    "false_penalty": "0/17",
+    "miss": "1/13",
+    "accuracy": 0.967
+   },
+   "all": {
+    "n": 67,
+    "false_penalty": "0/37",
+    "miss": "1/30",
+    "accuracy": 0.985
+   }
+  },
+  "errors": [
+   {
+    "id": "trap_called_formal_notice-18",
+    "split": "heldout",
+    "label": "violation",
+    "phenomenon": "plain",
+    "text": "نوجه إليكم هذا الإعذار الرسمي بالسداد."
+   }
+  ]
+ }
+}
