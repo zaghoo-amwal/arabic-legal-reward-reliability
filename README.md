@@ -98,14 +98,6 @@ reward, evidence = env.step("Your candidate answer")
 
 The original six task packages, source-derived references, raw model outputs, and session logs are withheld. This checkout reproduces the synthetic failure demonstration, **not the historical six-task scores**. See [release scope](docs/RELEASE_SCOPE.md).
 
-## Why I am working on this
-
-My background spans applied physics, scientific-domain AI post-training, and financial infrastructure. I hold a PhD in Applied Physics from Harvard and have conducted experimental research at Harvard and the University of Rochester. My subsequent work includes AI post-training through Mercor, data and AI consulting at McKinsey/QuantumBlack, and leading AMWAL's financial identity and payment infrastructure work in MENA.
-
-That combination motivates an empirical approach to domain AI: treat a benchmark as a measurement instrument, investigate its failure modes, and connect its success criteria to the decisions a system will make. This independent project applies that perspective to Arabic legal evaluation, with financial workflows as a next research direction.
-
-Development used AI assistance for code, examples, documentation and analysis. The project is not presented as research conducted by, or endorsed by, any employer or model provider; it includes no employer training data or internal evaluation materials supplied in this release.
-
 ## Next experiments
 
 - **Validate the verifier:** independently label matched Arabic examples that vary negation, contractual versus statutory framing, and paraphrase. Measure criterion precision/recall and false gate activation.
@@ -116,5 +108,7 @@ Development used AI assistance for code, examples, documentation and analysis. T
 The aim is to develop **domain evaluation data with explicit assumptions, auditable evidence, and measured verifier reliability**. Those are prerequisites for investigating whether the same tasks can provide useful training signals.
 
 [Technical methods and limitations](docs/METHODS.md) · [Historical research note](docs/RESEARCH_NOTE.md) · [Release scope](docs/RELEASE_SCOPE.md)
+
+Development used AI assistance for code, examples, documentation and analysis. No employer or model-provider endorsement is implied.
 
 No open-source license has been selected; public visibility alone does not grant reuse rights.
