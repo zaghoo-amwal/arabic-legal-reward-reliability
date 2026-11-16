@@ -4,7 +4,7 @@ Included: evaluator source code; a newly authored AI-assisted synthetic prompt, 
 
 Excluded: all six original task packages and references, original negative-control fixtures and citation ledger, screenshot/document provenance, raw model answers, judge caches, snapshots, Codex event traces, session metadata, local logs, and application/resume working notes.
 
-The original working directory is retained locally. This standalone folder is the publication source; do not upload its parent directory. There was no existing Git repository/history to scrub. No commit, remote repository or publication was created during cleanup.
+The original working directory is retained locally. This standalone folder is the publication source; do not upload its parent directory. The source workspace had no Git history to scrub. Publication starts from a new repository containing only the reviewed release files.
 
 Historical raw scores remain unchanged. The synthetic demonstration is separately labeled and deliberately retains a known verifier defect. Provider adapters are historical and unverified against current services; the validated release path is the offline demo.
 
